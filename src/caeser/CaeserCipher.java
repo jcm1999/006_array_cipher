@@ -39,7 +39,7 @@ public class CaeserCipher {
 			
 			index = alpha.indexOf(plainText.charAt(i));
 
-				
+			
 			/** Doug's Method **/
 			keyAdded = (index + key) % alpha.length();
 			
@@ -51,6 +51,9 @@ public class CaeserCipher {
 			}
 			**/
 			
+			if(keyAdded == 26){
+				keyAdded = 27;
+			}
 			//System.out.println("encoded is " + alpha.charAt(keyAdded));
 			
 			secretText += alpha.charAt(keyAdded);
