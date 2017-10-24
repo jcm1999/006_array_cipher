@@ -41,7 +41,13 @@ public class CaeserCipher {
 			
 			keyAdded = index + key;
 			
+			if(keyAdded >= alpha.length()) {
+				keyAdded -= alpha.length();
+			}
+			
 			System.out.println("encoded is " + alpha.charAt(keyAdded));
+			
+			secretText += alpha.charAt(keyAdded);
 			
 		}
 		
