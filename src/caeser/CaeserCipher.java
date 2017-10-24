@@ -5,7 +5,7 @@ public class CaeserCipher {
 	private String alpha = "abcdefghijklmnopqrstuvwxyz 0123456789.:'";
 
 	public String encode(String plainText, int key) {
-		
+		String checkSpace = " ";
 		String secretText = "";
 		int index, keyAdded;
 		
@@ -38,8 +38,11 @@ public class CaeserCipher {
 		for(int i=0; i<plainText.length(); i++) {
 			
 			index = alpha.indexOf(plainText.charAt(i));
-
-			
+			checkSpace = "" + plainText.charAt(i);
+			if(checkSpace.equals(" ")) {
+				secretText += checkSpace;
+			}
+			else {
 			/** Doug's Method **/
 			keyAdded = (index + key) % alpha.length();
 			
@@ -50,14 +53,15 @@ public class CaeserCipher {
 				keyAdded -= alpha.length();
 			}
 			**/
-			
+		/*
 			if(keyAdded == 26){
 				keyAdded = 27;
 			}
+			*/
 			//System.out.println("encoded is " + alpha.charAt(keyAdded));
 			
 			secretText += alpha.charAt(keyAdded);
-			
+			}
 		}
 		
 		
