@@ -2,7 +2,7 @@ package caeser;
 
 public class CaeserCipher {
 	
-	private String alpha = "abcdefghijklmnopqrstuvwxyz";
+	private String alpha = "abcdefghijklmnopqrstuvwxyz ";
 
 	public String encode(String plainText, int key) {
 		
@@ -38,7 +38,7 @@ public class CaeserCipher {
 			
 			index = alpha.indexOf(plainText.charAt(i));
 			System.out.println("index = " + index);
-			
+				
 			/** Doug's Method **/
 			keyAdded = (index + key) % alpha.length();
 			
